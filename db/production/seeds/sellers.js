@@ -1,13 +1,13 @@
 const bcrypt = require('bcrypt');
 
-exports.seed = async function (knex, Promise) {
+exports.seed = async knex => {
   // creates hash for password '123456'
   const defaultPass = await bcrypt.hash('123456', 8);
 
   // Deletes ALL existing entries
   return knex('sellers')
     .del()
-    .then(function () {
+    .then(() => {
       // Inserts seed entries
       return knex('sellers').insert([
         {

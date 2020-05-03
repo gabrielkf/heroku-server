@@ -1,5 +1,5 @@
-exports.up = function (knex, Promise) {
-  return knex.schema.createTable('stock', function (table) {
+exports.up = knex => {
+  return knex.schema.createTable('stock', table => {
     table.increments('id').unique().primary();
     table
       .integer('product_id')
@@ -10,6 +10,6 @@ exports.up = function (knex, Promise) {
   });
 };
 
-exports.down = function (knex, Promise) {
+exports.down = knex => {
   return knex.schema.dropTable('stock');
 };
