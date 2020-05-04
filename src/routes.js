@@ -29,4 +29,10 @@ routes.get('/sellers', async (req, res) => {
   });
 });
 
+routes.get('/clients', async (req, res) => {
+  await knex.raw('SELECT * from clients').then(clients => {
+    res.send(clients.rows);
+  });
+});
+
 module.exports = routes;
