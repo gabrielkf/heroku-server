@@ -1,11 +1,6 @@
-const http = require('http');
-const socketio = require('socket.io');
-
 const app = require('./expressConfig');
-
-const server = http.createServer(app);
-const io = socketio(server);
-// io.origins(['*']);
+const server = require('http').createServer(app);
+const io = require('socket.io')(server);
 
 const {
   addUser,
@@ -44,6 +39,7 @@ io.on('connect', socket => {
     callback();
   });
 
+  //* Responds to message
   socket.on('sendMessage', (message, callback) => {
     const user = getUser(socket.id);
 

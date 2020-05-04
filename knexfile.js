@@ -3,10 +3,10 @@ module.exports = {
     client: 'pg',
     connection: {
       host: '192.168.99.100',
-      port: 5433,
-      user: 'megahack',
-      password: 'team13vtexmegahack',
-      database: 'team13db',
+      port: 5432,
+      user: 'team13',
+      password: 'megahack',
+      database: 'team13',
       charset: 'utf8',
     },
     migrations: {
