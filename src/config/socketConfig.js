@@ -27,10 +27,10 @@ io.on('connect', socket => {
       text: `Tire suas dúvidas com ${user.room}.`,
     });
 
-    socket.broadcast.to(user.room).emit('message', {
-      user: 'Loja',
-      text: `${user.name} precisa de orientação`,
-    });
+    // socket.broadcast.to(user.room).emit('message', {
+    //   user: 'Loja',
+    //   text: `${user.name} precisa de orientação`,
+    // });
 
     io.to(user.room).emit('roomData', {
       room: user.room,
